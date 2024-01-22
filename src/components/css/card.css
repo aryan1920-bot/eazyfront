@@ -1,0 +1,65 @@
+/* RestaurantCard.css */
+.restaurant-card {
+  display: inline-block;
+  width: 200px;
+  background-color: #ff5e007d;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.restaurant-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.restaurant-card.expanded {
+  height: 200px;
+}
+
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-name {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.restaurant-info {
+  margin: 5px 0;
+}
+
+.book-now-btn {
+  background-color: #ffc795;
+  color: #ff0000;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.book-now-btn:hover {
+  background-color: #ff8800;
+  color: #fff;
+}
+
+.slots-container {
+  /* Add styles for slots container as needed */
+}
