@@ -65,7 +65,7 @@ class Items extends React.Component {
             <div className="row">
               {this.state.list.map((element) => (
                 <div className="col-md-3" key={element.id} >
-                    <Cards id={element.id} title={element.name} description={element.location} imageUrl={element.image}/>
+                    <Cards id={element.id} title={element.name} location={element.location} imageUrl={element.image}/>
                    </div>
               ))}
             </div>

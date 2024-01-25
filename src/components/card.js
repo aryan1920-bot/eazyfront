@@ -8,7 +8,7 @@ import './css/Cards.css'
 class Cards extends React.Component {
 
   render() {
-    const { id, title, description, imageUrl } = this.props;
+    const { id, title, location, imageUrl } = this.props;
 
     return (
       <Link to={`/restaurant/${id}`} style={{ textDecoration: 'none' }}>
@@ -17,7 +17,7 @@ class Cards extends React.Component {
             <img className="card-img-top" src={imageUrl} alt="Restaurant" />
             <div className="card-body">
               <h5 className="card-title">{title}</h5>
-              <p className="card-text">{description}</p>
+              <p className="card-text">{location}</p>
             </div>
           </div>
         </div>
