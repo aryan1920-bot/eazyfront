@@ -5,6 +5,7 @@
   border-radius: 10px;
   margin: 0 auto;
   margin-top: 18px;
+  /* font-size: 30px; */
   /* filter: blur(10px); */
 }
 
@@ -16,6 +17,7 @@
 
 .restaurant-details {
   background-color: #ff9a52c3;
+  /* font-size: 40px; */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,7 +29,7 @@
 }
 
 .restaurant-name {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   
   margin-bottom: 10px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -81,7 +83,7 @@
   }
 
   button:hover {
-    background-color: #0d7d1f; /* Change the background color on hover */
+    background-color: #0364ff; /* Change the background color on hover */
   }
 }
 

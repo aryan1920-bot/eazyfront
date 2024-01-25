@@ -50,3 +50,9 @@ a:hover {
   width: 100%;
   color:#ffd8ac80;
 }
+
+.fields {
+  color: #ffffff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* text-align:top; */
+}

@@ -9,8 +9,8 @@ const Footer = () => {
     <footer id="contact">
       {/* Contact information */}
       <section>
-        <h2>Contact Information</h2>
-        <p>Phone Numbers:</p>
+        <h2 className='fields'>Phone Numbers</h2>
+        {/* <p>Phone Numbers:</p> */}
         <ul>
           <li>Main Office: (+91) 89XXXXXXXX</li>
           <li>Support: (+91) 93XXXXXXXXXX </li>
@@ -19,7 +19,7 @@ const Footer = () => {
 
       {/* Email addresses */}
       <section>
-        <h2>Email Addresses</h2>
+        <h2 className='fields'>Email Addresses</h2>
         <p>
           General Inquiries: <a href="mailto:help@eazydiner.com">help@eazydiner.com</a>
         </p>
@@ -30,7 +30,7 @@ const Footer = () => {
 
       {/* Social media handles */}
       <section>
-        <h2>Social Media</h2>
+        <h2 className='fields'>Social Media</h2>
         <p>
           Instagram: <a href="https://www.instagram.com/eazydiner" target="_blank" rel="noopener noreferrer">@eazydiner</a>
         </p>
