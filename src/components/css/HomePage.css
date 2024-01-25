@@ -46,7 +46,9 @@ body {
   align-items: center;
   margin-right: auto;
   margin-bottom: 20px;
+  /* width:90%; */
 }
+
 
 form {
   display:flex;
@@ -58,8 +60,9 @@ form {
   border-radius: 10px;
   margin-right: 10px;
   margin-top: 5px;
-  width: 300px;
+  width: 350px;
   border: 1px solid #ccc; /* Add styling for the input field */
+  
 }
 
 .search-bar button {
@@ -74,6 +77,8 @@ form {
   margin-right: 20px;
   position: relative;
   transition: color 0.3s;
+  justify-content: space-between;
+  /* width: 100%; */
 }
 
 .search-bar button:hover {
@@ -130,7 +135,7 @@ form {
   padding: 15px 30px;
   border-radius: 20px; /* Squircle shape */
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.1s, transform 0.2s;
   position: relative;
 }
 

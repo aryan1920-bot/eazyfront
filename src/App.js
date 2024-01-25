@@ -17,7 +17,7 @@ const App = ({dummyRestaurantData}) => {
     <Router>
       <Routes>
       <Route path="/" element={<Login />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/Home" element={<HomePage />} />
         <Route path="/restaurant/:id" element={<RestaurantDetails dummyRestaurantData={dummyRestaurantData} />} />
         <Route path="/review-booking" element={<ReviewBooking />} />
         <Route path="/BookingConfirmation" element={<BookingConfirmation />} />

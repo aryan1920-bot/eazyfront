@@ -17,11 +17,13 @@ const HomePage = () => {
 
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
   const handleCardClick = (restaurant) => {
     setSelectedRestaurant(restaurant);
   };
-
-  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearchInputChange = (e) => {
     setSearchQuery(e.target.value);
@@ -29,8 +31,14 @@ const HomePage = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle search submission (e.g., navigate to a search results page)
-    console.log("Search submitted:", searchQuery);
+    // Add logic to handle search submission (e.g., filter and update the list of restaurants)
+    const filtered = Items.filter(
+      (restaurant) =>
+        restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        restaurant.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        restaurant.cuisineType.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredRestaurants(filtered);
   };
 
   useEffect(() => {
@@ -38,7 +46,7 @@ const HomePage = () => {
       try {
         const response = await fetch("/sample.json");
         const data = await response.json();
-        const ids = data.map(restaurant => restaurant.id);
+        const ids = data.map((restaurant) => restaurant.id);
         setRestaurantIds(ids);
       } catch (error) {
         console.error("Error fetching restaurant IDs:", error);
@@ -47,47 +55,25 @@ const HomePage = () => {
 
     fetchRestaurantIds();
   }, []);
-
   return (
     <div className="home-container">
       <Header/>
       <div className="content">
         <h2>WELCOME FOODIE !!</h2>
         <div className="search-bar">
-        <form onSubmit={handleSearchSubmit}>
-          <input
-            type="text"
-            placeholder="Search by Cuisine..."
-            value={searchQuery}
-            onChange={handleSearchInputChange}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          />
-          <button type="submit">Search</button>
-        </form>
-        <form onSubmit={handleSearchSubmit}>
-          <input
-            type="text"
-            placeholder="Search by restaurant..."
-            value={searchQuery}
-            onChange={handleSearchInputChange}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          />
-          <button type="submit">Search</button>
-        </form>
-        <form onSubmit={handleSearchSubmit}>
-          <input
-            type="text"
-            placeholder="Search by location"
-            value={searchQuery}
-            onChange={handleSearchInputChange}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          />
-          <button type="submit">Search</button>
-        </form>
-      </div>
+          <form onSubmit={handleSearchSubmit}>
+            <input
+              type="text"
+              placeholder="Search by Cuisine, Restaurant, or Location..."
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="bar"
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
         <div className="offer-section">
           <img src={salad} alt="Special Offer" className="salad" />
         </div>
