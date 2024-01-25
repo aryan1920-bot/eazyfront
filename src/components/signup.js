@@ -21,19 +21,32 @@ const Signup = () => {
     });
   };
 
-  const handleSignup = () => {
-    // Add logic to check if the user is already logged in
-    const isUserLoggedIn = true; // Replace this with your actual logic to check if the user is logged in
+  const handleSignup = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:3009/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (isUserLoggedIn) {
-      // Redirect to the login page if the user is already logged in
-      navigate("/login");
-    } else {
-      // Add logic to handle signup
-      console.log("Signup data:", formData);
+      const data = await response.json();
 
-      // Redirect to another page if needed
-      navigate("/some-route");
+      if (response.ok) {
+        console.log("Signup successful:", data);
+
+        // Redirect to another page if needed
+        navigate("/login");
+      } else {
+        console.error("Signup failed:", data);
+
+        // Handle error, show error message, etc.
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+
+      // Handle error, show error message, etc.
     }
   };
 

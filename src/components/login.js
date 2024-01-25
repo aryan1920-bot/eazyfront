@@ -111,9 +111,34 @@ const Login = () => {
     navigate("/");
   }
 
-  const gotohome=()=>{
-    navigate("/home");
-  }
+  const handleLogin = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:3009/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Login successful:", data);
+
+        // Redirect to another page if needed
+        navigate("/home");
+      } else {
+        console.error("Login failed:", data);
+
+        // Handle error, show error message, etc.
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+
+      // Handle error, show error message, etc.
+    }
+  };
   
 
   return (
@@ -155,7 +180,7 @@ const Login = () => {
         <div className="submit-c">
           
           <div
-            className="submit" onClick={gotohome}
+            className="submit" onClick={handleLogin}
           >
             Log in
           </div>

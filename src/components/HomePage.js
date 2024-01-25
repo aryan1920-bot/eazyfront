@@ -19,6 +19,8 @@ const HomePage = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
 
+  const [allRestaurants, setAllRestaurants] = useState([]);
+
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const handleCardClick = (restaurant) => {
@@ -40,6 +42,8 @@ const HomePage = () => {
     );
     setFilteredRestaurants(filtered);
   };
+
+  const restaurantData = filteredRestaurants.length > 0 ? filteredRestaurants : allRestaurants;
 
   useEffect(() => {
     const fetchRestaurantIds = async () => {
@@ -123,7 +127,7 @@ const HomePage = () => {
         </div>
         <h4>Top recommended restaurants !!</h4>
         <div className="card-container">
-          <Items />
+        <Items/>
         </div>
       </div>
       <Footer />
