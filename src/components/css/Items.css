@@ -1,0 +1,53 @@
+/* styles.css */
+
+.card {
+  width: 20rem;
+  height: 23rem;
+  overflow: hidden;
+  margin: 0px 10px 20px;
+  padding: 20px;
+}
+
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.container {
+  text-align: center;
+  /* color: #fff; */
+  margin-top:10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.my-3 {
+  color: #ff7d19;
+  text-shadow: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  margin-top: 10px;
+  margin-bottom: 3rem;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 2px;
+  overflow: hidden;
+  /* background-color: white; */
+}

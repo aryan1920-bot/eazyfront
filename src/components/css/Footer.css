@@ -10,7 +10,7 @@ footer {
   justify-content: center;
   width: 100%;
   align-items: center;
-
+  /* height: 100%; */
 }
 
 section {
@@ -37,7 +37,7 @@ li {
 }
 
 a {
-  color: #71acff; /* Cyan link color */
+  color: #79b1ff; /* Cyan link color */
   text-decoration: none;
 }
 
@@ -45,3 +45,8 @@ a:hover {
   text-decoration: underline;
 }
 
+.copy {
+  text-align: center;
+  width: 100%;
+  color:#ffd8ac80;
+}

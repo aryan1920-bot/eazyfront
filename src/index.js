@@ -1,19 +1,5 @@
 // index.js
 
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './components/styles.css'; 
-// import App from './App';
-
-// const port = 3001;
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 // import './components/css/LoginPage.css'; 

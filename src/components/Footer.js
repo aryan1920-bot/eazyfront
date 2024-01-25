@@ -38,6 +38,9 @@ const Footer = () => {
           X: <a href="https://twitter.com/eazydiner" target="_blank" rel="noopener noreferrer">@eazydiner</a>
         </p>
       </section>
+      <div className='copy'>
+        <p>&copy; {currentYear} Eazydiner</p>
+      </div>
     </footer>
   );
 };
