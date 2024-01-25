@@ -4,7 +4,7 @@
   transition: transform 0.3s;
   padding:10px 10px 10px 10px;
   color:#f95700;
-  /* background-color: #fff; */
+  /* background-color: #fff;*/
 }
 
 .restaurant-card:hover {
@@ -14,4 +14,9 @@
 .card-link {
   text-decoration: none; /* Remove the underline on hover */
   color: inherit; /* Inherit the text color from the parent */
+}
+
+.card-img-top{
+  height: 50%;
+  
 }

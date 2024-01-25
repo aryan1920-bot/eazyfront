@@ -1,11 +1,16 @@
 /* styles.css */
 
 .card {
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10%;
   width: 20rem;
   height: 23rem;
   overflow: hidden;
   margin: 0px 10px 20px;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
+  background-color: #fc732f43;
+  border: none;
 }
 
 
@@ -17,12 +22,13 @@
 .container {
   text-align: center;
   /* color: #fff; */
+  gap:10px;
   margin-top:10px;
 }
 
 .row {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .my-3 {
@@ -43,11 +49,4 @@
 
 .btn-danger:hover {
   background-color: #c82333;
-}
-.col-md-4 {
-  flex: 0 0 auto;
-  width: 100%;
-  padding: 2px;
-  overflow: hidden;
-  /* background-color: white; */
 }
