@@ -94,8 +94,6 @@ import Footer from "./Footer";
 const Login = () => {
   const navigate = useNavigate();
 
-  const [action, setAction] = useState("Login");
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -109,31 +107,14 @@ const Login = () => {
     });
   };
 
-  const handleFormSubmit = async () => {
-    try {
-      const response = await fetch(`http://localhost:5000/auth/${action.toLowerCase()}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  const  newuser=()=>{
+    navigate("/");
+  }
 
-      const data = await response.json();
-      console.log(data);
-
-      // Assuming your backend sends a token upon successful login
-      if (data.token) {
-        // Save the token in localStorage or a state management system
-        // Redirect to the home page
-        navigate('/home');
-      }
-
-      // Handle the response, e.g., set user in state or display an error message
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+  const gotohome=()=>{
+    navigate("/home");
+  }
+  
 
   return (
     <div className="login-container">
@@ -142,20 +123,10 @@ const Login = () => {
       </div>
       <div className="login-c">
         <div className="login">
-          <div className="text">{action}</div>
+          <div className="text">Log in</div>
         </div>
         <div className="inputs">
-          {action === "Sign up" && (
-            <div className="input">
-              <input
-                type="text"
-                placeholder="Name"
-                name="name"
-                value={formData.name}
-                onChange={handleFormChange}
-              />
-            </div>
-          )}
+          
           <div className="input">
             <input
               type="email"
@@ -178,20 +149,13 @@ const Login = () => {
         <div className="forgot-password">
           Forgot Password? <span>Click here</span>
         </div>
+        <div className="forgot-password">
+          New user? <span onClick={newuser}>Sign up</span>
+        </div>
         <div className="submit-c">
+          
           <div
-            className={action === "Login" ? "submit gray" : "submit"}
-            onClick={() => {
-              setAction("Sign up");
-            }}
-          >
-            Sign Up
-          </div>
-          <div
-            className={action === "Sign up" ? "submit gray" : "submit"}
-            onClick={() => {
-              setAction("Login");
-            }}
+            className="submit" onClick={gotohome}
           >
             Log in
           </div>

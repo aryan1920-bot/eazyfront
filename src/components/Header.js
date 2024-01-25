@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import "./css/Header.css"; // Import the shared CSS styles
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Header = () => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -11,12 +14,18 @@ const Header = () => {
   const [isContactUsHovered, setIsContactUsHovered] = React.useState(false);
   const [isLogoutHovered, setIsLogoutHovered] = React.useState(false);
 
+  
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  
+  const navigate =useNavigate();
+  const logout=()=>{
+    navigate('/');
+  }
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -39,6 +48,7 @@ const Header = () => {
       
       <nav className="nav">
         <ul>
+        
           <li>
             <a
               href="#"
@@ -54,8 +64,10 @@ const Header = () => {
             <a
               href="#"
               className="nav-link2"
+              onClick={logout}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
+
             >
               LogOut
             </a>
